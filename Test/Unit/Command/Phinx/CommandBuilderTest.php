@@ -29,7 +29,7 @@ class CommandBuilderTest extends \PHPUnit_Framework_TestCase
         $this->command = $this->getMockBuilder(Command::class)->disableOriginalConstructor()->getMock();
 
         $this->testedObject = new CommandBuilder($this->pathLocator, $this->configBuilder, $this->command);
-
+    }
 
     public function testCanBeInstantiated()
     {

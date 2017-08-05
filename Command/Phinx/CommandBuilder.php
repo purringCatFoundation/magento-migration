@@ -10,13 +10,13 @@ class CommandBuilder
 {
 
     /** @var PathLocatorInterface */
-    private $pathLocator;
+    protected $pathLocator;
 
     /** @var ConfigBuilderInterface */
-    private $configBuilder;
+    protected $configBuilder;
 
     /** @var Command */
-    private $command;
+    protected $command;
 
     /**
      * Phinx constructor.
@@ -32,7 +32,7 @@ class CommandBuilder
     }
 
 
-    public function phinx($method = '')
+    public function getExecCommand($method = '')
     {
         $this->command->useExec = true;
         $this->command->setCommand($this->pathLocator->getPhinxBinaryPath());
@@ -41,8 +41,6 @@ class CommandBuilder
             $this->command->addArg($method);
         }
 
-        $this->command->execute();
-
-        return $this->command;
+        return $this->command->getExecCommand();
     }
 }

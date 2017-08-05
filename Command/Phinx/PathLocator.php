@@ -10,13 +10,13 @@ use PCF\MagentoMigration\Api\PathLocatorInterface;
 class PathLocator implements PathLocatorInterface
 {
     /** @var Reader */
-    private $dirReader;
+    protected $dirReader;
 
     /** @var DirectoryList */
-    private $directoryList;
+    protected $directoryList;
 
     /** @var ModuleList */
-    private $moduleList;
+    protected $moduleList;
 
     /**
      * @param Reader $dirReader
@@ -58,18 +58,23 @@ class PathLocator implements PathLocatorInterface
 
     /**
      * @param array $modulesList
+     *
      * @return array
      */
     protected function getAllExistingMigrationsPaths(array $modulesList)
     {
-        $modulesPaths = [];
+        $migrationPaths = [];
         foreach ($modulesList as $moduleName => $moduleMeta) {
             $path = $this->dirReader->getModuleDir( '', $moduleName) . DIRECTORY_SEPARATOR . self::MIGRATION_DIR_NAME;
             if (file_exists($path)) {
-                $modulesPaths[$moduleName] = $path;
+                $migrationPaths[$moduleName] = $path;
             }
         }
 
-        return $modulesPaths;
+        if (empty($migrationPaths)) {
+            throw new \LogicException('no migration Paths found, create Migration dir in your module');
+        }
+
+        return $migrationPaths;
     }
 }

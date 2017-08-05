@@ -17,9 +17,13 @@
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="hello_world" xsi:type="object">\PCF\MagentoMigration\Command\Phinx</item>
+                <item name="pcf_migrate" xsi:type="object">\PCF\MagentoMigration\Command\Phinx</item>
             </argument>
         </arguments>
     </type>
-
+    <type name="\Symfony\Component\Process\Process">
+        <arguments>
+            <argument name="commandline" xsi:type="string">phinx</argument>
+        </arguments>
+    </type>
 </config>

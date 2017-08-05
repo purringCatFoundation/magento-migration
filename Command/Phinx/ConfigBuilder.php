@@ -6,27 +6,28 @@ use Magento\Framework\App\DeploymentConfig;
 use Magento\Framework\Config\ConfigOptionsListConstants;
 use Magento\Framework\Exception\LocalizedException;
 use PCF\MagentoMigration\Api\ConfigBuilderInterface;
+use PCF\MagentoMigration\Api\PathLocatorInterface;
 use Symfony\Component\Yaml\Dumper;
 
 class ConfigBuilder implements ConfigBuilderInterface
 {
     /** @var DeploymentConfig */
-    private $deploymentConfig;
+    protected $deploymentConfig;
 
     /** @var PathLocator */
-    private $pathLocator;
+    protected $pathLocator;
 
     /** @var Dumper */
-    private $yamlDumper;
+    protected $yamlDumper;
 
-    private $defaultDb = 'default';
+    protected $defaultDb = 'default';
 
     /**
      * @param DeploymentConfig $deploymentConfig
      * @param PathLocator $pathLocator
      * @param Dumper $yamlDumper
      */
-    public function __construct(DeploymentConfig $deploymentConfig, PathLocator $pathLocator, Dumper $yamlDumper)
+    public function __construct(DeploymentConfig $deploymentConfig, PathLocatorInterface $pathLocator, Dumper $yamlDumper)
     {
         $this->deploymentConfig = $deploymentConfig;
         $this->pathLocator = $pathLocator;

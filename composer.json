@@ -7,21 +7,17 @@
     {
       "name": "Bernard",
       "email": "b.vanderesch@gmail.com"
-    },
-    {
-      "name": "Paweł",
-      "email": "paw.radzikowski@gmail.com"
     }
   ],
   "minimum-stability": "stable",
   "require": {
-    "php": ">5.5.22",
+    "php": "7.0",
     "robmorgan/phinx": "^0.8.1",
     "symfony/console": "v2.8.9 as 2.6.13",
     "mikehaertl/php-shellcommand": "^1.2"
   },
   "require-dev": {
-    "phpunit/phpunit": "^6.0",
+    "phpunit/phpunit": "*",
     "squizlabs/php_codesniffer": "^2.8"
   },
   "autoload": {

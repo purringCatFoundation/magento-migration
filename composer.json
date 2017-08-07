@@ -1,7 +1,7 @@
 {
   "name": "pcf/magento-migration",
   "description": "magento phinx migration module",
-  "type": "library",
+  "type": "magento2-module",
   "license": "MIT",
   "authors": [
     {

@@ -20,12 +20,12 @@
     "phpunit/phpunit": "*",
     "squizlabs/php_codesniffer": "^2.8"
   },
-  "extra": {
-    "map": [
-      [
-        "*",
-        "PCF"
-      ]
-    ]
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "PCF\\MagentoMigration\\": ""
+    }
   }
 }

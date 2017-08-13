@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace PCF\MagentoMigration\Command\Phinx;
 
 use Magento\Framework\Module\Dir\Reader;
@@ -65,7 +67,7 @@ class PathLocator implements PathLocatorInterface
     {
         $migrationPaths = [];
         foreach ($modulesList as $moduleName => $moduleMeta) {
-            $path = $this->dirReader->getModuleDir( '', $moduleName) . DIRECTORY_SEPARATOR . self::MIGRATION_DIR_NAME;
+            $path = $this->dirReader->getModuleDir('', $moduleName) . DIRECTORY_SEPARATOR . self::MIGRATION_DIR_NAME;
             if (file_exists($path)) {
                 $migrationPaths[$moduleName] = $path;
             }

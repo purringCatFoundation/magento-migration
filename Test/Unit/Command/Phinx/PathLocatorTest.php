@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace PCf\MagentoMigration\Test\Unit\Command\Phinx;
 
 use Magento\Framework\Module\Dir\Reader;
@@ -7,7 +9,6 @@ use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\Module\ModuleList;
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 use PCF\MagentoMigration\Command\Phinx\PathLocator;
-
 
 class PathLocatorTest extends \PHPUnit_Framework_TestCase
 {
@@ -29,7 +30,7 @@ class PathLocatorTest extends \PHPUnit_Framework_TestCase
         $this->directoryList = $this->getMockBuilder(DirectoryList::class)->disableOriginalConstructor()->getMock();
         $this->moduleList= $this->getMockBuilder(ModuleList::class)->disableOriginalConstructor()->getMock();
 
-        $this->testedObject = new PathLocator($this->dirReader,$this->directoryList, $this->moduleList);
+        $this->testedObject = new PathLocator($this->dirReader, $this->directoryList, $this->moduleList);
     }
 
 
@@ -46,7 +47,8 @@ class PathLocatorTest extends \PHPUnit_Framework_TestCase
         $tmpDir = sys_get_temp_dir();
         mkdir($tmpDir . '/path/Migrations', 0777, true);
         $this->moduleList->expects($this->once())->method('getAll')->willReturn(['name' => 'meta']);
-        $this->dirReader->expects($this->once())->method('getModuleDir')->with('', 'name')->willReturn($tmpDir . '/path');
+        $this->dirReader->expects($this->once())->method('getModuleDir')
+            ->with('', 'name')->willReturn($tmpDir . '/path');
 
         $this->assertSame(['name' => $tmpDir . '/path/Migrations'], $this->testedObject->getAllMigrationDirs());
         rmdir($tmpDir . '/path/Migrations');

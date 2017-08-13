@@ -1,7 +1,8 @@
 <?php
 
-namespace PCF\MagentoMigration\Api;
+declare(strict_types = 1);
 
+namespace PCF\MagentoMigration\Api;
 
 interface PathLocatorInterface
 {

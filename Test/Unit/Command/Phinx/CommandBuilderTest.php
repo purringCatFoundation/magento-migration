@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace PCf\MagentoMigration\Test\Unit\Command\Phinx;
 
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
@@ -51,5 +53,4 @@ class CommandBuilderTest extends \PHPUnit_Framework_TestCase
 
         $this->testedObject->getExecCommand($method);
     }
-
 }

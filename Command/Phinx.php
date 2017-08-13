@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace PCF\MagentoMigration\Command;
 
 use Symfony\Component\Console\Input\InputArgument;
@@ -54,7 +56,7 @@ class Phinx extends Command
 
         $this->process->setCommandLine($execCommand);
         $this->process->setTty(true);
-        $this->process->run(function ($type, $buffer) use ($output){
+        $this->process->run(function ($type, $buffer) use ($output) {
             $output->write($buffer);
         });
 

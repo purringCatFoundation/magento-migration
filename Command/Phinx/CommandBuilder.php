@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace PCF\MagentoMigration\Command\Phinx;
 
 use mikehaertl\shellcommand\Command;
@@ -24,8 +26,11 @@ class CommandBuilder
      * @param ConfigBuilderInterface $configBuilder
      * @param Command $command
      */
-    public function __construct(PathLocatorInterface $pathLocator, ConfigBuilderInterface $configBuilder, Command $command)
-    {
+    public function __construct(
+        PathLocatorInterface $pathLocator,
+        ConfigBuilderInterface $configBuilder,
+        Command $command
+    ) {
         $this->pathLocator = $pathLocator;
         $this->configBuilder = $configBuilder;
         $this->command = $command;

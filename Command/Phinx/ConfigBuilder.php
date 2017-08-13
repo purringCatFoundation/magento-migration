@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace PCF\MagentoMigration\Command\Phinx;
 
 use Magento\Framework\App\DeploymentConfig;
@@ -14,7 +16,7 @@ class ConfigBuilder implements ConfigBuilderInterface
     /** @var DeploymentConfig */
     protected $deploymentConfig;
 
-    /** @var PathLocator */
+    /** @var PathLocatorInterface */
     protected $pathLocator;
 
     /** @var Dumper */
@@ -24,11 +26,14 @@ class ConfigBuilder implements ConfigBuilderInterface
 
     /**
      * @param DeploymentConfig $deploymentConfig
-     * @param PathLocator $pathLocator
+     * @param PathLocatorInterface $pathLocator
      * @param Dumper $yamlDumper
      */
-    public function __construct(DeploymentConfig $deploymentConfig, PathLocatorInterface $pathLocator, Dumper $yamlDumper)
-    {
+    public function __construct(
+        DeploymentConfig $deploymentConfig,
+        PathLocatorInterface $pathLocator,
+        Dumper $yamlDumper
+    ) {
         $this->deploymentConfig = $deploymentConfig;
         $this->pathLocator = $pathLocator;
         $this->yamlDumper = $yamlDumper;

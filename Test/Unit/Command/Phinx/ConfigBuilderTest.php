@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace PCf\MagentoMigration\Test\Unit\Command\Phinx;
 
 use Magento\Framework\App\DeploymentConfig;
@@ -77,5 +79,4 @@ class ConfigBuilderTest extends \PHPUnit_Framework_TestCase
 
         $this->testedObject->getConfigPath();
     }
-
 }

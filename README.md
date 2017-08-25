@@ -9,12 +9,12 @@ Creating tool for migrations in magento, with `rollback` option.
 ### Download
 You can add these module into your project by adding lines below into your composer.json `require` section:
 ```
-"adeptofvoltron/magento-migration" : "*",
-"symfony/console": "~2.8|~3.0" as v2.6
+        "pcf/magento-migration" : "dev-master",
+        "symfony/console": "2.8 as v2.6"
 ```
 Setting symfony/console alias is required for magento compatibility.
 
-After that use your `composer update` command.
+After that use your `composer update` command, ans `path/to/magento/directory/bin/magento setup:upgrade`.
 
 ### Using
 That will enable `pcf:migration` command from your magento cli.

@@ -16,6 +16,7 @@ Line setting symfony/console is required for magento compatibility.
 
 After that use your `composer update` command
 
+### Using
 That will enable `pcf:migration` comand from your magento cli.
 
 You have to create at least one directory in your custom modules called `Migrations` as migration files directory.

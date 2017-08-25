@@ -21,7 +21,7 @@ That will enable `pcf:migration` command from your magento cli.
 
 You have to create at least one directory in your custom modules called `Migrations` as migration files directory.
 
-`pcf:migration` works same way as phinx binary file. [Phinx](https://github.com/cakephp/phinx) documentation can be found here: (Phinx documentation)http://docs.phinx.org]
+`pcf:migration` works same way as phinx binary file. [Phinx](https://github.com/cakephp/phinx) documentation can be found here: (Phinx documentation)[http://docs.phinx.org]
 
 ## Contributing
 

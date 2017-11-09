@@ -10,5 +10,5 @@ interface ConfigBuilderInterface
     /**
      * @return string
      */
-    public function getConfigPath();
+    public function getConfigPath() :string;
 }

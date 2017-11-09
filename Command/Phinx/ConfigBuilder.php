@@ -42,7 +42,7 @@ class ConfigBuilder implements ConfigBuilderInterface
     /**
      * @inheritdoc
      */
-    public function getConfigPath()
+    public function getConfigPath() :string
     {
         $yml = $this->yamlDumper->dump($this->getConfigArray(), 5);
         $tmpFileName = tempnam(sys_get_temp_dir(), md5($yml));

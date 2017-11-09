@@ -35,7 +35,7 @@ class PathLocator implements PathLocatorInterface
     /**
      * @inheritdoc
      */
-    public function getPhinxBinaryPath()
+    public function getPhinxBinaryPath() :string
     {
         return $this->getVendorPath() . DIRECTORY_SEPARATOR . 'bin' . DIRECTORY_SEPARATOR . 'phinx';
     }
@@ -43,7 +43,7 @@ class PathLocator implements PathLocatorInterface
     /**
      * @inheritdoc
      */
-    public function getVendorPath()
+    public function getVendorPath() :string
     {
         return $this->directoryList->getRoot() . DIRECTORY_SEPARATOR . self::VENDOR_DIR_NAME;
     }
@@ -51,7 +51,7 @@ class PathLocator implements PathLocatorInterface
     /**
      * @inheritdoc
      */
-    public function getAllMigrationDirs()
+    public function getAllMigrationDirs() :array
     {
         $modules = $this->moduleList->getAll();
 

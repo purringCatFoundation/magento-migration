@@ -77,6 +77,6 @@ class ConfigBuilderTest extends \PHPUnit_Framework_TestCase
         $this->yamlDumper->expects($this->once())->method('dump')
             ->with($confArray)->willReturn('some yml');
 
-        $this->testedObject->getConfigPath();
+        $this->testedObject->createConfigPath();
     }
 }

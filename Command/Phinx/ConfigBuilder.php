@@ -42,7 +42,7 @@ class ConfigBuilder implements ConfigBuilderInterface
     /**
      * @inheritdoc
      */
-    public function getConfigPath() :string
+    public function createConfigPath() :string
     {
         $yml = $this->yamlDumper->dump($this->getConfigArray(), 5);
         $tmpFileName = tempnam(sys_get_temp_dir(), md5($yml));
@@ -59,7 +59,10 @@ class ConfigBuilder implements ConfigBuilderInterface
         $this->defaultDb = $defaultDb;
     }
 
-    protected function getConfigArray()
+    /**
+     * @return array
+     */
+    protected function getConfigArray(): array
     {
         return [
             'paths' => [ 'migrations' => $this->pathLocator->getAllMigrationDirs()],
@@ -99,7 +102,10 @@ class ConfigBuilder implements ConfigBuilderInterface
         return $connections;
     }
 
-    protected function getEnvironments()
+    /**
+     * @return array
+     */
+    protected function getEnvironments() : array
     {
         $return = [
               'default_migration_table' => 'phinxlog',

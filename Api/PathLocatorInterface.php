@@ -12,15 +12,15 @@ interface PathLocatorInterface
     /**
      * @return string
      */
-    public function getPhinxBinaryPath() :string;
+    public function getPhinxBinaryPath();
 
     /**
      * @return string
      */
-    public function getVendorPath() :string;
+    public function getVendorPath();
 
     /**
      * @return array
      */
-    public function getAllMigrationDirs() :array;
+    public function getAllMigrationDirs();
 }

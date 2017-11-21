@@ -47,10 +47,10 @@ class CommandBuilderTest extends \PHPUnit_Framework_TestCase
         $method = 'is the key to success';
         $this->pathLocator->expects($this->once())->method('getPhinxBinaryPath')->willReturn($bin);
         $this->command->expects($this->once())->method('setCommand')->with($bin);
-        $this->configBuilder->expects($this->once())->method('getConfigPath')->willReturn($path);
+        $this->configBuilder->expects($this->once())->method('createConfigPath')->willReturn($path);
         $this->command->expects($this->exactly(2))->method('addArg')
             ->withConsecutive(['--configuration=',  $path], [$method]);
-
-        $this->testedObject->getExecCommand($method);
+        $this->command->expects($this->once())->method('getExecCommand')->willReturn('return command');
+        $this->assertSame('return command', $this->testedObject->getExecCommand($method));
     }
 }

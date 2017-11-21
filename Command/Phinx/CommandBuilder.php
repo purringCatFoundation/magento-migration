@@ -37,11 +37,15 @@ class CommandBuilder
     }
 
 
-    public function getExecCommand($method = '')
+    /**
+     * @param string $method optional
+     * @return string
+     */
+    public function getExecCommand($method = '') :string
     {
         $this->command->useExec = true;
         $this->command->setCommand($this->pathLocator->getPhinxBinaryPath());
-        $this->command->addArg('--configuration=', $this->configBuilder->getConfigPath());
+        $this->command->addArg('--configuration=', $this->configBuilder->createConfigPath());
         if (!empty($method)) {
             $this->command->addArg($method);
         }

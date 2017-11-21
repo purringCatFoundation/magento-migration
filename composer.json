@@ -1,0 +1,30 @@
+{
+  "name": "pcf/magento-migration",
+  "description": "magento phinx migration module",
+  "type": "magento2-module",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bernard",
+      "email": "b.vanderesch@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^7.0",
+    "robmorgan/phinx": "^0.8.1",
+    "mikehaertl/php-shellcommand": "^1.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*",
+    "squizlabs/php_codesniffer": "^2.8"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "PCF\\MagentoMigration\\": ""
+    }
+  }
+}

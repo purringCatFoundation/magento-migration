@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference
+            for="\PCF\MagentoMigration\Api\ConfigBuilderInterface"
+            type="\PCF\MagentoMigration\Command\Phinx\ConfigBuilder"
+    />
+    <preference
+            for="\PCF\MagentoMigration\Api\PathLocatorInterface"
+            type="\PCF\MagentoMigration\Command\Phinx\PathLocator"
+    />
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="pcf_migrate" xsi:type="object">\PCF\MagentoMigration\Command\Phinx</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="\Symfony\Component\Process\Process">
+        <arguments>
+            <argument name="commandline" xsi:type="string">phinx</argument>
+        </arguments>
+    </type>
+</config>

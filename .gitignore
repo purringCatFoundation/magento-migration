@@ -1,0 +1,14 @@
+composer.phar
+/vendor/
+
+tmp/
+*.tmp
+*.bak
+*~.nib
+
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+phpunit.xml

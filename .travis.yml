@@ -11,6 +11,6 @@ before_script:
 
 script:
   - ./vendor/bin/phpunit Test
-  - ./vendor/bin/phpcs --standard=PSR2 ./src/ ./test/
+  - ./vendor/bin/phpcs --standard=PSR2 ./Api ./Command ./Test
 notifications:
   email: false

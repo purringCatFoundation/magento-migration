@@ -12,6 +12,7 @@
   "minimum-stability": "stable",
   "require": {
     "php": "^7.0",
+    "magento/framework": "100.*",
     "robmorgan/phinx": "^0.8.1",
     "mikehaertl/php-shellcommand": "^1.2"
   },

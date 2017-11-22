@@ -10,7 +10,7 @@ before_script:
   - composer install --prefer-dist --no-interaction
 
 script:
-  - ./vendor/bin/phpunit Test
+  - ./vendor/bin/phpunit ./Test
   - ./vendor/bin/phpcs --standard=PSR2 ./Api ./Command ./Test
 notifications:
   email: false

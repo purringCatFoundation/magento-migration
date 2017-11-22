@@ -9,6 +9,12 @@
       "email": "b.vanderesch@gmail.com"
     }
   ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://repo.magento.com/"
+    }
+  ],
   "minimum-stability": "stable",
   "require": {
     "php": "^7.0",

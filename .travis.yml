@@ -1,16 +1,20 @@
 language: php
 sudo: false
 php:
-  - '7.1'
-  - '7.0'
-  - nightly
-
+- '7.1'
+- '7.0'
+- nightly
 before_script:
-  - composer self-update
-  - composer install --prefer-dist --no-interaction
-
+- composer self-update
+- echo "{\"http-basic\":{\"repo.magento.com\":{\"username\":\"${MAGENTO_USERNAME}\",\"password\":\"${MAGENTO_PASSWORD}\"}}}"
+  > auth.json
+- composer install --prefer-dist
 script:
-  - ./vendor/bin/phpunit ./Test
-  - ./vendor/bin/phpcs --standard=PSR2 ./Api ./Command ./Test
+- "./vendor/bin/phpunit ./Test"
+- "./vendor/bin/phpcs --standard=PSR2 ./Api ./Command ./Test"
 notifications:
   email: false
+env:
+  global:
+  - secure: BH58cCBJDIUR7HWY1OnOUTDVGpqmQ1QYvY2bod1LmCmWmu3+RuABojQJ8G7VcZERm1vW07fwghBMfme9ocqbr5Stxtf+j+eW+tUm6xmJieaWGrkwo8kL5775/njZ6E6BYsVBLRLn1b21i2TAOYftXVj26w8guP1TaKKE/5XuParoSLjgzheaPpET6GKjcUw9iqwZlnsBILyU6fxf1rjYlBlgm+bztoPMvOntc1YZ6+Wkl6GFKFyy7vBRRurlPDJWIqo/JzuJTqeHg6G5p6KY+PnKLAWnGqHgCvrUO242kyWWXoXQcrlZFkECRJmn6WCiZhbqVDf2urANMj9xzesav69Tq+1gj1+UB7PqNfXleoAK6MRjVVbEZhbzQfm87rIPUzKyC3RGNOeQbxbbToTms6yXkfgC7luDVS9HJzu3JDwnIE7QczAz78IxGMx5cwegC69o2c1m7RbLJTs0czcmCniIw6L2OSzKXOXrvxwkiMpkh/G7oPT1hCxQspghvmcuaaUAkk2vLBwD7tsvOpI5YQfKuJefrXINcN5PDOn4GsWH3C5qrrBy/ixay+z+9fAYOJOeUPmi8yW9So4FmHzJKqrjlWBze66B3mofq3KpYuHKHq/KcRE5buMUR/fEEdG6eiI5zw9s4ZuD54ZAJA0EHJGjg6BNA5urec9dCgW0O+0=
+  - secure: D5LM8lNUgMx3WJ8avO5Ii3Fr7VXLWX6Hlc+uPoTh8hKfUUU/XV2MSNE4tg6VZh/+e3wSX+7sPpdEBfmTJjLtY+1O4kVtjguSdUY9RFJYmp5yZq6WdN1XLRBw7GdUU8F62+lLeERqHw0sXMZVOjlqHvQb8eERpE+n/1magwILkmXHnD77ZVCJl0AM0OEWivBhTXISn0O1wd2Gvjocl7j9BxolFrttTTolVvObn+O06h/AmOsfRJpWyYdzRKlgDcBlIhnnLs2KNBqYeMoyvMHYzbehosTI3r5itk10Bwm3vDcphuZV8TK9CuF6tuqSB+VIfl6BUeXAdtGLXqEm923O5dWeMKyCT1h1aUxsbZrR0tzQsoLA20xc25Fq5DjBhaoBWmJp/9ZoXdMuSt3kpJfvyPrfhLHjwfsegkzu78EacQ31/YGf2DZaHiD6CtQexss+fyiNht0pQBM7rZLogpC8f7a6HFQ3YEui58EIap6C8556gWVpoyJrTEID3D8QJih4XvIPaegfHIXIYgTq3laRNhdW1K4dTx7Y3PSVZ9W3Td/8bz12UISklj9/V67IoSSimjgldxrPXp8o65fq7ZeYX0PXXmCDj8BqkTiLhHveX7fWeT9HNuDOMdLO1r8Y6UK7T6Tzz8zl/Qsmva1DqUxoESS70W/GtCO7jmviNV/gJjs=

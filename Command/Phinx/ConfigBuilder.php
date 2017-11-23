@@ -72,7 +72,6 @@ class ConfigBuilder implements ConfigBuilderInterface
 
     /**
      * @throws LocalizedException
-     * todo: make port and charset configurable
      */
     protected function getDbConfig()
     {
@@ -90,7 +89,7 @@ class ConfigBuilder implements ConfigBuilderInterface
                 'name' => $config['dbname'],
                 'user' => $config['username'],
                 'pass' => $config['password'],
-                'port' => 3306,
+                'port' => empty($config['port']) ? 3306 : $config['port'],
                 'charset' => 'utf8'
             ];
         }

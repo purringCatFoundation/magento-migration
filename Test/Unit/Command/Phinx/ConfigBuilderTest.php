@@ -5,10 +5,7 @@ declare(strict_types = 1);
 namespace PCf\MagentoMigration\Test\Unit\Command\Phinx;
 
 use Magento\Framework\App\DeploymentConfig;
-use Magento\Framework\Config\ConfigOptionsListConstants;
-use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
-use PCF\MagentoMigration\Api\ConfigBuilderInterface;
 use Symfony\Component\Yaml\Dumper;
 use PCF\MagentoMigration\Api\PathLocatorInterface;
 use PCF\MagentoMigration\Command\Phinx\ConfigBuilder;

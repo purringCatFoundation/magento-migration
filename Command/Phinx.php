@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace PCF\MagentoMigration\Command;
 
 use Psr\Log\LoggerInterface;
-use Symfony\Component\Console\Input\{InputArgument, InputOption};
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Output\OutputInterface;
 use PCF\MagentoMigration\Command\Phinx\CommandBuilder;
 use Symfony\Component\Console\Input\InputInterface;
